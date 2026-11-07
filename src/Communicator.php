@@ -187,9 +187,9 @@ class Communicator
      */
     public static function isSeekableStream($var)
     {
-        if (T\Stream::isStream($var)) {
+        if (is_resource($var)) {
             $meta = stream_get_meta_data($var);
-            return $meta['seekable'];
+            return isset($meta['seekable']) && $meta['seekable'];
         }
         return false;
     }

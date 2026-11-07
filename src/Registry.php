@@ -93,6 +93,9 @@ class Registry
             return array(null, null);
         }
         $result = explode('__', $tag, 2);
+        if (!isset($result[1])) {
+            return array(null, $result[0]);
+        }
         $result[0] .= '__';
         if ('' === $result[1]) {
             $result[1] = null;

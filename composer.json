@@ -1,0 +1,55 @@
+{
+    "name": "srikanta159/net_routeros_php",
+    "description": "Modern PHP client for MikroTik RouterOS API with complete RouterOS v7 and v6 compatibility",
+    "type": "library",
+    "keywords": [
+        "mikrotik",
+        "routeros",
+        "routeros-api",
+        "routeros-v7",
+        "networking",
+        "mikrotik-api"
+    ],
+    "homepage": "https://github.com/srikanta159/Net_RouterOS_PHP",
+    "license": "LGPL-2.1-or-later",
+    "authors": [
+        {
+            "name": "Srikanta Das",
+            "homepage": "https://github.com/srikanta159",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Vasil Rangelov",
+            "email": "boen.robot@gmail.com",
+            "role": "Original Author"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/srikanta159/Net_RouterOS_PHP/issues",
+        "source": "https://github.com/srikanta159/Net_RouterOS_PHP"
+    },
+    "require": {
+        "php": ">=7.4",
+        "pear2/net_transmitter": "^1.0@alpha",
+        "ext-iconv": "*"
+    },
+    "suggest": {
+        "ext-openssl": "Required for encrypted (TLS) RouterOS API connections (port 8729)",
+        "ext-apcu": "Allows persistent connections across HTTP requests"
+    },
+    "autoload": {
+        "psr-4": {
+            "PEAR2\\Net\\RouterOS\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PEAR2\\Net\\RouterOS\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "php tests/run_tests.php"
+    },
+    "minimum-stability": "alpha",
+    "prefer-stable": true
+}

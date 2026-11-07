@@ -115,7 +115,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * 
      * @param array $responses An array of responses, in network order.
      */
-    public function __construct(array $responses)
+    public function __construct(array $responses = array())
     {
         $pos = 0;
         foreach ($responses as $response) {
@@ -224,6 +224,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * 
      * @return int The number of responses in the collection.
      */
+    #[\ReturnTypeWillChange]
     public function count($mode = COUNT_NORMAL)
     {
         if ($mode !== COUNT_NORMAL) {
@@ -246,6 +247,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * 
      * @return bool TRUE if the offset exists, FALSE otherwise.
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return is_int($offset)
@@ -261,6 +263,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * 
      * @return Response The response at the specified offset.
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return is_int($offset)
@@ -282,6 +285,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * @return void
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         
@@ -298,6 +302,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * @return void
      * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         
@@ -309,6 +314,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * @return Response The first response in the collection, or FALSE if the
      *     collection is empty.
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         return $this->seek(0);
@@ -324,6 +330,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * @return Response The {@link Response} at the specified position, or FALSE
      *     if the specified position is not valid.
      */
+    #[\ReturnTypeWillChange]
     public function seek($position)
     {
         $this->position = is_int($position)
@@ -342,6 +349,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * @return Response The next {@link Response} object, or FALSE if the
      *     position is not valid.
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->position;
@@ -354,6 +362,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * @return Response The response at the current pointer position, or FALSE
      *     if the position is not valid.
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->valid() ? $this->responses[$this->position] : false;
@@ -390,6 +399,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * @return int The key at the current pointer position, i.e. the pointer
      *     position itself, or FALSE if the position is not valid.
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->valid() ? $this->position : false;
@@ -400,6 +410,7 @@ class ResponseCollection implements ArrayAccess, SeekableIterator, Countable
      * 
      * @return bool TRUE if the pointer is valid, FALSE otherwise.
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return $this->offsetExists($this->position);

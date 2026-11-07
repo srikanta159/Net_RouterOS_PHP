@@ -1,0 +1,23 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# PHPUnit cache and coverage
+.phpunit.result.cache
+.phpunit.cache/
+coverage/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+
+# Operating System files
+Thumbs.db
+.DS_Store
+*.swp
+*~
+

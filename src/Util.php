@@ -896,6 +896,7 @@ class Util implements Countable
      * @return int The number of items, or -1 on failure (e.g. if the
      *     current menu does not have a "print" command or items to be counted).
      */
+    #[\ReturnTypeWillChange]
     public function count($mode = COUNT_NORMAL, Query $query = null)
     {
         $result = $this->client->sendSync(
