@@ -213,29 +213,6 @@ Or using Composer:
 composer test
 ```
 
----
-
-## Publishing to Packagist
-
-To make this package installable via `composer require srikanta159/net_routeros_php`:
-
-1. Commit and push your changes to GitHub:
-   ```bash
-   git add .
-   git commit -m "Modernize package: PSR-4, PHP 8.x compatibility, test suite, and CI"
-   git push origin main
-   ```
-2. Create a GitHub Release or Git Tag:
-   ```bash
-   git tag -a v1.0.0 -m "Release v1.0.0: Full RouterOS v7 and PHP 8.x support"
-   git push origin v1.0.0
-   ```
-3. Go to [Packagist.org](https://packagist.org/), log in with GitHub, click **Submit**, and paste your repository URL:
-   `https://github.com/srikanta159/Net_RouterOS_PHP`
-4. Enable the **GitHub Service Hook** (under GitHub repo Settings > Webhooks) so new releases are updated automatically on Packagist.
-
----
-
 ## Contributing
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and development workflow.
